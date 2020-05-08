@@ -49,9 +49,9 @@ fi
 
 VER=`$BIN_NTPD --version`
 if [ "$VER" = '4.2.6p5' ]; then
-  USECMD=`echo $BIN_NTPDC -c iostats`
+  USECMD='echo $BIN_NTPDC -c iostats'
 else
-  USECMD=`echo $BIN_NTPQ -c iostats localhost`
+  USECMD='echo $BIN_NTPQ -c iostats localhost'
 fi
 CMD2=`$USECMD | $BIN_TR -d ' ' | $BIN_CUT -d : -f 2 | $BIN_TR '\n' ' '`
 
